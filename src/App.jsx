@@ -36,35 +36,10 @@ const App = () => {
 
   }
   useEffect(() => {
-    localStorage.setItem("todo", JSON.stringify(todoList));
+    localStorage.setItem("todos", JSON.stringify(todoList));
 
   }, [todoList]);
 
-  // fetchfunction
-  // GitHub username
-  const username = 'abdulaleem';
-
-  // GitHub API endpoint
-  const url = `https://api.github.com/users/${username}/repos`;
-
-  // Headers object
-  const headers = {
-    'Accept': 'application/vnd.github.v3+json',
-    // 'Authorization': 'Bearer YOUR_GITHUB_TOKEN'  Optional, for authenticated requests
-  };
-
-  // API call with headers
-  fetch(url, {
-    method: 'GET',
-    headers: headers
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data); // Response data handle karein
-    })
-    .catch(error => {
-      console.error('Error:', error); // Error handle karein
-    });
 
   return (
     <>
