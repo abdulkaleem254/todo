@@ -3,7 +3,10 @@ import Input from "./components/Input";
 import Showtodo from "./components/Showtodo";
 
 const App = () => {
-  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem("todo")))
+  const [todoList, setTodoList] = useState(()=>{
+    const storedTodos = localStorage.getItem("todos");
+    return storedTodos ? JSON.parse(storedTodos) : [];
+  });
   const handletodo = (value) => {
     console.log(value);
     let len = todoList.length;
